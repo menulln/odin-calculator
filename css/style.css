@@ -27,12 +27,19 @@ body {
     flex: 1;
 }
 
-.calculator button {
-    font-size: 24px;
-    flex: 1;
-}
-
 .row {
     display: flex;
-    justify-content: center;
+    gap: 12px;
+}
+
+.calculator button {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+
+}
+
+.button-clear,
+.button-equals {
+    flex-grow: 2;
 }
