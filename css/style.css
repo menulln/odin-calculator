@@ -24,4 +24,15 @@ body {
     padding: 8px 12px;
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
+    flex: 1;
+}
+
+.calculator button {
+    font-size: 24px;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
 }
