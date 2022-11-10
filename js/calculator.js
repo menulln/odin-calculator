@@ -9,11 +9,11 @@ let operator = '';
 
 buttonsOperator.forEach( (button) => {
     button.addEventListener('click', (e) => {
-        if (numOne === 0) {
+        if (numOne === 0 && result === 0) {
             numOne = getDisplayValue();
             clearDisplay();
             operator = e.target.textContent;
-        } else {
+        } else if (numOne !== 0) {
             numTwo = getDisplayValue();
             clearDisplay();
             result = operate(operator, numOne, numTwo);
@@ -27,7 +27,13 @@ buttonsOperator.forEach( (button) => {
 
 buttonsNumber.forEach( (button) => {
     button.addEventListener('click', (e) => {
-        setDisplayValue(e.target.textContent);
+        if (result === 0) {
+            setDisplayValue(e.target.textContent);
+        } else {
+            result = 0;
+            clearDisplay();
+            setDisplayValue(e.target.textContent);
+        }
     });
 });
 
