@@ -2,6 +2,7 @@ const display = document.querySelector('.display');
 const buttonsNumber = document.querySelectorAll('.button-number');
 const buttonsOperator = document.querySelectorAll('.button-operator');
 
+let result = 0;
 let numOne = 0;
 let numTwo = 0;
 let operator = '';
