@@ -7,6 +7,18 @@ buttonsNumber.forEach( (button) => {
     button.addEventListener('click', );
 });
 
+function setDisplayValue(value) {
+    if (display.textContent === '0') {
+        display.textContent = value;
+    } else {
+        display.textContent += value;
+    }
+}
+
+function getDisplayValue() {
+    return +display.textContent;
+}
+
 function operate(operator, a, b) {
     switch(operator) {
         case '+':
