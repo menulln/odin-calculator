@@ -4,14 +4,14 @@ const buttonsNumber = document.querySelectorAll('.button-number');
 
 
 buttonsNumber.forEach( (button) => {
-    button.addEventListener('click', setDisplayValue);
+    button.addEventListener('click', );
 });
 
-function setDisplayValue(e) {
+function setDisplayValue(value) {
     if (display.textContent === '0') {
-        display.textContent = e.target.textContent;
+        display.textContent = value;
     } else {
-        display.textContent += e.target.textContent;
+        display.textContent += value;
     }
 }
 
