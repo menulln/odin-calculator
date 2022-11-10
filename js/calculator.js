@@ -1,3 +1,6 @@
+const display = document.querySelector('.display');
+const buttonsNumber = document.querySelectorAll('.button-number');
+
 function operate(operator, a, b) {
     switch(operator) {
         case '+':
