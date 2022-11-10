@@ -9,9 +9,16 @@ let operator = '';
 
 buttonsOperator.forEach( (button) => {
     button.addEventListener('click', (e) => {
-        numOne = getDisplayValue();
-        clearDisplay();
-        operator = e.target.textContent;
+        if (numOne === 0) {
+            numOne = getDisplayValue();
+            clearDisplay();
+            operator = e.target.textContent;
+        } else {
+            numTwo = getDisplayValue();
+            clearDisplay();
+            result = operate(operator, numOne, numTwo);
+            setDisplayValue(result);
+        }
     });
 });
 
