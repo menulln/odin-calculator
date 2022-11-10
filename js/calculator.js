@@ -1,6 +1,12 @@
 const display = document.querySelector('.display');
 const buttonsNumber = document.querySelectorAll('.button-number');
 
+
+
+buttonsNumber.forEach( (button) => {
+    button.addEventListener('click', );
+});
+
 function operate(operator, a, b) {
     switch(operator) {
         case '+':
