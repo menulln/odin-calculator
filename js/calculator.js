@@ -18,6 +18,9 @@ buttonsOperator.forEach( (button) => {
             clearDisplay();
             result = operate(operator, numOne, numTwo);
             setDisplayValue(result);
+            numOne = 0;
+            numTwo = 0;
+            operator = '';
         }
     });
 });
