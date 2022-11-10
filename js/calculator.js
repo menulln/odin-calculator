@@ -47,16 +47,16 @@ function clearDisplay() {
 function operate(operator, a, b) {
     switch(operator) {
         case '+':
-            add(a, b);
+            return add(a, b);
             break;
         case '-':
-            substract(a, b);
+            return substract(a, b);
             break;
         case 'x':
-            multiply(a, b);
+            return multiply(a, b);
             break;
         case '÷':
-            divide(a, b);
+            return divide(a, b);
             break;
     }
 }
