@@ -7,7 +7,11 @@ let numTwo = 0;
 let operator = '';
 
 buttonsOperator.forEach( (button) => {
-    button.addEventListener('click', );
+    button.addEventListener('click', (e) => {
+        numOne = getDisplayValue();
+        clearDisplay();
+        operator = e.target.textContent;
+    });
 });
 
 buttonsNumber.forEach( (button) => {
@@ -29,7 +33,7 @@ function getDisplayValue() {
 }
 
 function clearDisplay() {
-    display.textContent = '';
+    display.textContent = '0';
 }
 
 function operate(operator, a, b) {
