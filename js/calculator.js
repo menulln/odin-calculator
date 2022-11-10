@@ -28,6 +28,10 @@ function getDisplayValue() {
     return +display.textContent;
 }
 
+function clearDisplay() {
+    display.textContent = '';
+}
+
 function operate(operator, a, b) {
     switch(operator) {
         case '+':
