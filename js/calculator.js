@@ -32,10 +32,10 @@ function operate(operator, a, b) {
         case '-':
             substract(a, b);
             break;
-        case '*':
+        case 'x':
             multiply(a, b);
             break;
-        case '/':
+        case '÷':
             divide(a, b);
             break;
     }
