@@ -4,8 +4,12 @@ const buttonsNumber = document.querySelectorAll('.button-number');
 
 
 buttonsNumber.forEach( (button) => {
-    button.addEventListener('click', );
+    button.addEventListener('click', buttonToDisplay);
 });
+
+function buttonToDisplay(e) {
+    setDisplayValue(e.target.textContent);
+}
 
 function setDisplayValue(value) {
     if (display.textContent === '0') {
