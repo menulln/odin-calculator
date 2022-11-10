@@ -7,12 +7,10 @@ buttonsOperator.forEach( (button) => {
 });
 
 buttonsNumber.forEach( (button) => {
-    button.addEventListener('click', buttonToDisplay);
+    button.addEventListener('click', (e) => {
+        setDisplayValue(e.target.textContent);
+    });
 });
-
-function buttonToDisplay(e) {
-    setDisplayValue(e.target.textContent);
-}
 
 function setDisplayValue(value) {
     if (display.textContent === '0') {
