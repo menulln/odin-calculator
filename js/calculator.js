@@ -1,7 +1,10 @@
 const display = document.querySelector('.display');
 const buttonsNumber = document.querySelectorAll('.button-number');
+const buttonsOperator = document.querySelectorAll('.button-operator');
 
-
+buttonsOperator.forEach( (button) => {
+    button.addEventListener('click', );
+});
 
 buttonsNumber.forEach( (button) => {
     button.addEventListener('click', buttonToDisplay);
