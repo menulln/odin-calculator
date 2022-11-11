@@ -2,6 +2,7 @@ const display = document.querySelector('.display');
 const buttonsNumber = document.querySelectorAll('.button-number');
 const buttonsOperator = document.querySelectorAll('.button-operator');
 const buttonEquals = document.querySelector('.button-equals');
+const buttonClear = document.querySelector('.button-clear');
 
 let result = 0;
 let numOne = 0;
@@ -64,6 +65,14 @@ buttonsNumber.forEach( (button) => {
             setDisplayValue(e.target.textContent);
         }
     });
+});
+
+buttonClear.addEventListener('click', (e) => {
+    numOne = 0;
+    numTwo = 0;
+    result = 0;
+    operator = '';
+    clearDisplay();
 });
 
 function setDisplayValue(value) {
