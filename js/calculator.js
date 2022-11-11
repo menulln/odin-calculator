@@ -5,6 +5,7 @@ const buttonEquals = document.querySelector('.button-equals');
 const buttonClear = document.querySelector('.button-clear');
 const buttonBack = document.querySelector('.button-back');
 const buttonDot = document.querySelector('.button-dot');
+const MAX_DISPLAY_SIZE = 16;
 
 let result = 0;
 let numOne = 0;
@@ -58,13 +59,15 @@ buttonsOperator.forEach( (button) => {
 
 buttonsNumber.forEach( (button) => {
     button.addEventListener('click', (e) => {
-        if (result === 0) {
-            setDisplayValue(e.target.textContent);
-        } else {
-            numOne = result;
-            result = 0;
-            clearDisplay();
-            setDisplayValue(e.target.textContent);
+        if (getDisplayValue().toString().length < MAX_DISPLAY_SIZE) {
+            if (result === 0) {
+                setDisplayValue(e.target.textContent);
+            } else {
+                numOne = result;
+                result = 0;
+                clearDisplay();
+                setDisplayValue(e.target.textContent);
+            }
         }
     });
 });
