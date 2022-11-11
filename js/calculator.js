@@ -1,11 +1,24 @@
 const display = document.querySelector('.display');
 const buttonsNumber = document.querySelectorAll('.button-number');
 const buttonsOperator = document.querySelectorAll('.button-operator');
+const buttonEquals = document.querySelector('.button-equals');
 
 let result = 0;
 let numOne = 0;
 let numTwo = 0;
 let operator = '';
+
+buttonEquals.addEventListener('click', (e) => {
+    if (numOne !== 0 && operator !== '') {
+        numTwo = getDisplayValue();
+        result = operate(operator, numOne, numTwo);
+        clearDisplay();
+        setDisplayValue(result);
+        numOne = 0;
+        numTwo = 0;
+        operator = '';
+    }
+});
 
 buttonsOperator.forEach( (button) => {
     button.addEventListener('click', (e) => {
@@ -33,7 +46,7 @@ buttonsOperator.forEach( (button) => {
         } else if (result !== 0) {
             numOne = getDisplayValue();
             operator = e.target.textContent;
-            result = operate(operate, numOne, numTwo);
+            result = operate(operator, numOne, numTwo);
             clearDisplay();
             setDisplayValue(result);
         }
@@ -46,7 +59,7 @@ buttonsNumber.forEach( (button) => {
             setDisplayValue(e.target.textContent);
         } else {
             numOne = result;
-            result = 0; //x
+            result = 0;
             clearDisplay();
             setDisplayValue(e.target.textContent);
         }
