@@ -12,7 +12,7 @@ let operator = '';
 buttonEquals.addEventListener('click', (e) => {
     if (numOne !== 0 && operator !== '') {
         numTwo = getDisplayValue();
-        result = operate(operator, numOne, numTwo);
+        result = Math.floor(operate(operator, numOne, numTwo));
         clearDisplay();
         setDisplayValue(result);
         numOne = 0;
@@ -30,7 +30,7 @@ buttonsOperator.forEach( (button) => {
         } else if (operator !== '') {
             numTwo = getDisplayValue();
             clearDisplay();
-            result = operate(operator, numOne, numTwo);
+            result = Math.floor(operate(operator, numOne, numTwo));
             setDisplayValue(result);
             numOne = 0;
             numTwo = 0;
@@ -39,7 +39,7 @@ buttonsOperator.forEach( (button) => {
             numTwo = getDisplayValue();
             operator = e.target.textContent;
             clearDisplay();
-            result = operate(operator, numOne, numTwo);
+            result = Math.floor(operate(operator, numOne, numTwo));
             setDisplayValue(result);
             numOne = 0;
             numTwo = 0;
@@ -47,7 +47,7 @@ buttonsOperator.forEach( (button) => {
         } else if (result !== 0) {
             numOne = getDisplayValue();
             operator = e.target.textContent;
-            result = operate(operator, numOne, numTwo);
+            result = Math.floor(operate(operator, numOne, numTwo));
             clearDisplay();
             setDisplayValue(result);
         }
