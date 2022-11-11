@@ -13,14 +13,29 @@ buttonsOperator.forEach( (button) => {
             numOne = getDisplayValue();
             clearDisplay();
             operator = e.target.textContent;
-        } else if (numOne !== 0) {
+        } else if (operator !== '') {
             numTwo = getDisplayValue();
             clearDisplay();
             result = operate(operator, numOne, numTwo);
             setDisplayValue(result);
             numOne = 0;
             numTwo = 0;
+            operator = e.target.textContent;
+        } else if (numOne !== 0) {
+            numTwo = getDisplayValue();
+            operator = e.target.textContent;
+            clearDisplay();
+            result = operate(operator, numOne, numTwo);
+            setDisplayValue(result);
+            numOne = 0;
+            numTwo = 0;
             operator = '';
+        } else if (result !== 0) {
+            numOne = getDisplayValue();
+            operator = e.target.textContent;
+            result = operate(operate, numOne, numTwo);
+            clearDisplay();
+            setDisplayValue(result);
         }
     });
 });
@@ -30,7 +45,8 @@ buttonsNumber.forEach( (button) => {
         if (result === 0) {
             setDisplayValue(e.target.textContent);
         } else {
-            result = 0;
+            numOne = result;
+            result = 0; //x
             clearDisplay();
             setDisplayValue(e.target.textContent);
         }
