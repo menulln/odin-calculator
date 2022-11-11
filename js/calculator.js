@@ -4,6 +4,7 @@ const buttonsOperator = document.querySelectorAll('.button-operator');
 const buttonEquals = document.querySelector('.button-equals');
 const buttonClear = document.querySelector('.button-clear');
 const buttonBack = document.querySelector('.button-back');
+const buttonDot = document.querySelector('.button-dot');
 
 let result = 0;
 let numOne = 0;
@@ -82,6 +83,15 @@ buttonBack.addEventListener('click', (e) => {
     setDisplayValue(`${displayValue.substring(0, displayValue.length - 1)}`);
     if (getDisplayValue().toString() === '0') {
         setDisplayValue('0');
+    }
+});
+
+buttonDot.addEventListener('click', (e) => {
+    const re = /[.]/;
+    if (display.textContent.match(re)) {
+        return;
+    } else {
+        setDisplayValue('.');
     }
 });
 
